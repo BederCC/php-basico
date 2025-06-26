@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class Course {
     
     public function __construct(
