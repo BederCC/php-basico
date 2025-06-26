@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use App\FakeAiService;
+
+$aiService = new FakeAiService();
+
+echo 'Ask anything you want to know about AI' . PHP_EOL;
+
+while (true){
+    $input = readline('> ');
+
+    if ($input === 'exit' || $input === '') {
+        break;
+    }
+
+    $response = $aiService->getResponse($input);
+    echo $response . PHP_EOL;
+}
